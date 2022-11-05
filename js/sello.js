@@ -15,8 +15,12 @@ var apuesta = 0
     
 */
 
-
-
+    const name = document.getElementById("name")
+    const years = document.getElementById("year")
+    const bet = document.getElementById("apostar")
+    const sel = document.getElementById("main-select")
+    const aceptarSub = document.getElementById("aceptarSub")
+    /**/
     const lanzar = document.getElementById("throw")   
     lanzar.addEventListener('click', () => {
                 
@@ -32,8 +36,15 @@ var apuesta = 0
                     let source = "../img/img0.png";
                     document.getElementById("Img").setAttribute('src', source);
                 }
-            })/*
-        let apuesta, total;
+            })
+            
+    aceptarSub.addEventListener('click', () =>{
+        alert(
+            
+        )
+    })    
+   
+       /* let apuesta, total;
         let cont;
         
         total=0;
@@ -77,12 +88,11 @@ var apuesta = 0
             alert("Has jugado un total de "+cont+" vez y tu dinero total es $"+total);
         }else{
             alert("Has jugado un total de "+cont+" veces y tu dinero total es $"+total);
-        }
-    }
-    );
-   5*/
+        }   
+    
+   
 	    
-
+*/
 /*
  function CaraSello(){          
  do {           

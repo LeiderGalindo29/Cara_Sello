@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link href="css/cara.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class="main">
-            <div class="title-main">
-                <h1 class="title-sub">Juego Cara y Sello</h1>
-            </div>
-            <div class="throw-main-sub" id="throw-main-sub">
-                <div class="main-form" >
-                    <form class="content-form">                   
-                        <h1 class="title-form">Antes de comenzar rellene el formulario</h1>
-                        <div class="inputs-form">
-                            <input type="text" id="name">Digite Su nombre
-                            <input type="number" class="inputs-form-sub" id="year">Digite Su edad
-                            <input type="number" class="inputs-form-sub" id="apostar">Cuanto Desea apostar?
-                            <input type="number" class="inputs-form-sub" id="carasello">Eliga 1.Cara o 2.Sello
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="throw-main">             
-                <button class="button" id="throw">Lanzar moneda</button>
-            </div>
-            <div class="coin">              
-                <div class="sub-coin-moneda">
-                        <img src="img/img2.png" class="into-sello" id="Img"/>                
-                </div>
-            </div>
-            
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
+    <link href="css/cara.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="title-main">
+            <h1 class="title-sub">Juego Cara y Sello</h1>
         </div>
-        <script src="js/sello.js" type="text/javascript"></script>
-    </body>
+        <div class="throw-main-sub" id="throw-main-sub">
+            <div class="main-form">
+                <form class="content-form">
+                    <h1 class="title-form">Antes de comenzar rellene el formulario</h1>
+                    <div class="inputs-form">
+                        <input type="text" id="name">Digite Su nombre
+                        <input type="number" class="inputs-form-sub" id="year">Digite Su edad
+                        <input type="number" class="inputs-form-sub" id="apostar">Cuanto Desea apostar?                      
+                        <select id="main-select">
+                            <option>Seleccion</option>
+                            <option value="1">Cara</option>
+                            <option value="2">Sello</option>
+                        </select>
+                        <label for="">Seleccione ..</label>
+                    </div>
+                    <div class="aceptar">
+                        <button type="submit" class="aceptar-sub" id="aceptarSub">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="throw-main">
+            <button class="button" id="throw">Lanzar moneda</button>
+        </div>
+        <div class="coin">
+            <div class="sub-coin-moneda">
+                <img src="img/img2.png" class="into-sello" id="Img" />
+            </div>
+        </div>
+
+    </div>
+    <script src="js/sello.js" type="text/javascript"></script>
+</body>
+
 </html>
