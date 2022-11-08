@@ -99,10 +99,9 @@ lanzar.addEventListener('click', () => {
         }
 
         cont = cont + 1;
-
         elegir = window.confirm("Desea seguir jugando?")
     }
-    alert(`Usted ha jugado ` + contador + " partidas y su dinero acumulado es: " + total)
+    alert("Has jugado un total de " + cont + " veces y tu dinero total es $" + total);
 
 })
 
