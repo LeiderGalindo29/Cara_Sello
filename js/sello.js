@@ -73,36 +73,43 @@ lanzar.addEventListener('click', () => {
 
     let choose = document.getElementById('main-select').value
     let bet = document.getElementById('apostar').value
+    let year = document.getElementById('year').value
+    let name = document.getElementById('name').value
 
     let total = 0;
     let elegir;
     let cont = 0;
 
+if (year >= 18)
+{
     elegir = confirm("COMENZAR")
     while (elegir == true) {
         const local = Math.floor(Math.random() *2) +1;
         if (local == 1 && choose == 1) {
             alert("Elegiste " + choose + " y ha salido sello");
             total = total - choose;
-            alert("Has perdido " + total);
+            alert("Has perdido " + total + "," +name);
         }
         else if (choose == 2 && local == 2) {
             alert("Elegiste " + choose + " y ha salido sello");
             total = total + (bet * 2)
-            alert("Has ganado " + total)
+            alert("Has ganado " + total + "," +name)
         }
         else {
-            alert(local)
+            alert("El computador eligio "+local)
             alert("Has perdido")
             total=total-(bet)
             alert(`Usted ha perdido, acumulo: `+total)
         }
 
         cont = cont + 1;
-        elegir = window.confirm("Desea seguir jugando?")
+        elegir = window.confirm("Desea seguir jugando? "+name)
     }
-    alert("Has jugado un total de " + cont + " veces y tu dinero total es $" + total);
-
+    alert(name +"Has jugado un total de " + cont + " veces y tu dinero total es $" + total);
+}
+else(
+    alert(name+", Tiene que ser mayor de edad, no podra jugar")
+)
 })
 
 /*
