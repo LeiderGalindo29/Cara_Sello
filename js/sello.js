@@ -15,83 +15,166 @@ var apuesta = 0
     
 */
 
-    const name = document.getElementById("name")
-    const years = document.getElementById("year")
-    const bet = document.getElementById("apostar")
-    const sel = document.getElementById("main-select")
-    const aceptarSub = document.getElementById("aceptarSub")
-    /**/
-    const lanzar = document.getElementById("throw")   
-    lanzar.addEventListener('click', () => {
-                
-        //var elige = document.getElementById("carasello").value
-        let uno = 1
-        const local = parseInt(uno)+(Math.random() * 2);
 
-                if (parseInt(local) == 1) {
-                    let source = "../img/img1.png";
-                    document.getElementById("Img").setAttribute('src', source);                  
-                }
-                else if (parseInt(local) == 2) {
-                    let source = "../img/img0.png";
-                    document.getElementById("Img").setAttribute('src', source);
-                }
-            })
-            
-    aceptarSub.addEventListener('click', () =>{
-        alert(
-            
-        )
-    })    
-   
-       /* let apuesta, total;
+
+/*
+const lanzar = document.getElementById('aceptarSub')
+lanzar.addEventListener('click', () => {
+
+    let name = document.getElementById("name").value
+    let bet = document.getElementById("apostar").value
+    let sel = document.getElementById("main-select").value
+
+    let elegir
+    let uno = 1
+    let total = 0
+    const local = parseInt(uno) + (Math.random() * 2);
+
+    elegir = confirm("COMENZAR")
+    while (elegir == true) {
+        const local = parseInt(uno) + (Math.random() * 2);
+        if (local == 1 && sel == 1) {
+            alert("Elegiste " + sel + " y ha salido cara," + name);
+            total = total + bet * 2;
+            alert("Has ganado " + bet * 2);
+        } else if (local == 1 && sel == 2) {
+            alert("Elegiste " + sel + " y ha salido cara," + name);
+            total = total - bet;
+            alert("Has perdido " + bet);
+        } else if (local == 2 && sel == 2) {
+            alert("Elegiste " + sel + " y ha salido sello," + name);
+            total = total + bet * 2;
+            alert("Has ganado " + bet * 2);
+        } else if (local == 2 && sel == 1) {
+            alert("Elegiste " + sel + " y ha salido sello," + name);
+            total = total - bet;
+            alert("Has perdido " + bet + "," + name);
+        } else {
+            alert("Esa no es una opcion valida!");
+        }
+
         let cont;
-        
-        total=0;
-        cont=0;
+        cont = 0;
+        cont = cont + 1;
+        let opcion
+
+        opcion = window.confirm("Desea continuar jugando?");
+    }   
+
+    if (opcion == true) {
+        alert("Has jugado un total de " + cont + " vez y tu dinero total es $" + total);
+    } else {
+        alert("Has jugado un total de " + cont + " veces y tu dinero total es $" + total);
+    }
+})
+        */
+const lanzar = document.getElementById('aceptarSub');
+lanzar.addEventListener('click', () => {
+
+    let choose = document.getElementById('main-select').value
+    let bet = document.getElementById('apostar').value
+
+    let total = 0;
+    let elegir;
+    let cont = 0;
+
+    elegir = confirm("COMENZAR")
+    while (elegir == true) {
+        const local = Math.floor(Math.random() *2) +1;
+        if (local == 1 && choose == 1) {
+            alert("Elegiste " + choose + " y ha salido sello");
+            total = total - choose;
+            alert("Has perdido " + total);
+        }
+        else if (choose == 2 && local == 2) {
+            alert("Elegiste " + choose + " y ha salido sello");
+            total = total + (bet * 2)
+            alert("Has ganado " + total)
+        }
+        else {
+            alert(local)
+            alert("Has perdido")
+            total=total-(bet)
+            alert(`Usted ha perdido, acumulo: `+total)
+        }
+
+        cont = cont + 1;
+
+        elegir = window.confirm("Desea seguir jugando?")
+    }
+    alert(`Usted ha jugado ` + contador + " partidas y su dinero acumulado es: " + total)
+
+})
+
+/*
  
-        do {
+ 
+ 
+//var elige = document.getElementById("carasello").value
+let uno = 1
+const local = parseInt(uno)+(Math.random() * 2);
 
-            apuesta = document.getElementById("apostar")
-            apuesta = parseFloat(apuesta)
+if (parseInt(local) == 1) {
+let source = "../img/img1.png";
+document.getElementById("Img").setAttribute('src', source);                  
+}
+else if (parseInt(local) == 2) {
+let source = "../img/img0.png";
+document.getElementById("Img").setAttribute('src', source);
+}
+else if ( )   
+})*/
 
-            elige = document.getElementById("carasello")
 
-            if (local==0 && elige.equalsIgnoreCase("cara")) {
-                alert("Elegiste "+elige+" y ha salido cara");
-                total=total+apuesta*2;
-                alert("Has ganado "+apuesta*2);
-            }else if (local==0 && elige.equalsIgnoreCase("sello")) {
-                alert("Elegiste "+elige+" y ha salido cara");
-                total=total-apuesta;
-                Salert("Has perdido "+apuesta);
-            }else if (local==1 && elige.equalsIgnoreCase("sello")) {
-                alert("Elegiste "+elige+" y ha salido sello");
-                total=total+apuesta*2;
-                alert("Has ganado "+apuesta*2);
-            }else if (local==1 && elige.equalsIgnoreCase("cara")) {
-                alert("Elegiste "+elige+" y ha salido sello");
-                total=total-apuesta;
-                alert("Has perdido "+apuesta);
-            }else{
-                alert("Esa no es una opcion valida!");
-            }
 
-            cont=cont+1;
+/* let apuesta, total;
+ let cont;
+ 
+ total=0;
+ cont=0;
+ 
+ do {
 
-            opcion = prompt("Desea continuar jugando?");
-           
+     apuesta = document.getElementById("apostar")
+     apuesta = parseFloat(apuesta)
 
-        } while (opcion.equalsIgnoreCase("si"));
-        
-        if (cont==1) {
-            alert("Has jugado un total de "+cont+" vez y tu dinero total es $"+total);
-        }else{
-            alert("Has jugado un total de "+cont+" veces y tu dinero total es $"+total);
-        }   
+     elige = document.getElementById("carasello")
+
+     if (local==0 && elige.equalsIgnoreCase("cara")) {
+         alert("Elegiste "+elige+" y ha salido cara");
+         total=total+apuesta*2;
+         alert("Has ganado "+apuesta*2);
+     }else if (local==0 && elige.equalsIgnoreCase("sello")) {
+         alert("Elegiste "+elige+" y ha salido cara");
+         total=total-apuesta;
+         Salert("Has perdido "+apuesta);
+     }else if (local==1 && elige.equalsIgnoreCase("sello")) {
+         alert("Elegiste "+elige+" y ha salido sello");
+         total=total+apuesta*2;
+         alert("Has ganado "+apuesta*2);
+     }else if (local==1 && elige.equalsIgnoreCase("cara")) {
+         alert("Elegiste "+elige+" y ha salido sello");
+         total=total-apuesta;
+         alert("Has perdido "+apuesta);
+     }else{
+         alert("Esa no es una opcion valida!");
+     }
+
+     cont=cont+1;
+
+     opcion = prompt("Desea continuar jugando?");
     
-   
-	    
+
+ } while (opcion.equalsIgnoreCase("si"));
+ 
+ if (cont==1) {
+     alert("Has jugado un total de "+cont+" vez y tu dinero total es $"+total);
+ }else{
+     alert("Has jugado un total de "+cont+" veces y tu dinero total es $"+total);
+ }   
+ 
+ 
+ 
 */
 /*
  function CaraSello(){          

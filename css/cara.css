@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 28/10/2022, 07:32:39 PM
-    Author     : Leider
-*/
+
 *{  
     font-family: 'Roboto Mono', monospace;
     padding: 0%;
@@ -119,6 +111,7 @@ input.inputs-form-sub {
 }
 .button {
     color: white;
+    border: none;
     font-size: 1.8em;
     text-align: center;
     font-weight: bold;
