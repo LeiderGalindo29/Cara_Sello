@@ -68,8 +68,88 @@ lanzar.addEventListener('click', () => {
     }
 })
         */
+       
+let coin = document.querySelector("#coin");
+let lanzar = document.querySelector("#throw");
+let apos = document.querySelector("#apostar");
+let caraysello = document.querySelector("#main-select");
+let years = document.getElementById("year");
+let name = document.getElementById("name");
+let volver = document.querySelector("#restart");
+let total = 0
+let total1 = 0
+let cara = 0
+let sello = 0
+let cont =0
+let apuesta = 0
+
+
+
+lanzar.addEventListener("click", () =>
+{   
+    let year=parseInt(years.value)  
+    if (year >= 18){
+    let local = Math.floor(Math.random() * 2);
+    cont = cont + 1
+
+    coin.style.animation = "none"
+
+    let caraosello=parseInt(caraysello.value)  
+    let bet=parseInt(apos.value)
+    
+    if(local){
+        coin.style.animation = "cara 2s forwards";
+        setTimeout(function(){
+            if(local===caraosello){
+                total+=bet*2;
+                alert(`Has ganado salio cara, llevas ${bet*2}.
+                 en total tienes: ${total}`);
+            }
+            else{
+                total-=bet;
+                alert(`Usted ha perdido la moneda cayo en sello cara ${bet} en total tienes: ${total}`);
+            }
+        },2000)
+        cara++
+    }
+    else{
+        coin.style.animation = "sello 2s forwards";
+    setTimeout(function(){
+        if(local===caraosello){
+            total+=bet*2;
+            alert(`Has ganado salio cara, llevas ${bet*2}. en total tienes: ${total}`);
+           
+        } else{
+            total-=bet;
+            alert(`Usted ha perdido la moneda cayo en sello. perdiste ${bet} en total tienes: ${total} `);
+            
+        }
+    }, 2000);
+    sello++
+}
+
+volver.addEventListener("click",() => {
+    alert(`La cantidad de las partidas fue ${cont}, dinero acumulado por apuestas: ${total} `)
+    .then((result) => {
+            window.location.href = "./index.html";
+      })
+
+})
+    }else{
+        alert("Tiene que ser mayor de edad")
+    }
+})
+
+
+//}
+/*else{
+    alert("Tienes que ser mayor de edad")}*/
+/*
 const lanzar = document.getElementById('aceptarSub');
 lanzar.addEventListener('click', () => {
+
+    const coin = document.getElementById("Img")
+
 
     let choose = document.getElementById('main-select').value
     let bet = document.getElementById('apostar').value
@@ -111,26 +191,7 @@ else(
     alert(name+", Tiene que ser mayor de edad, no podra jugar")
 )
 })
-
-/*
- 
- 
- 
-//var elige = document.getElementById("carasello").value
-let uno = 1
-const local = parseInt(uno)+(Math.random() * 2);
-
-if (parseInt(local) == 1) {
-let source = "../img/img1.png";
-document.getElementById("Img").setAttribute('src', source);                  
-}
-else if (parseInt(local) == 2) {
-let source = "../img/img0.png";
-document.getElementById("Img").setAttribute('src', source);
-}
-else if ( )   
-})*/
-
+*/
 
 
 /* let apuesta, total;
